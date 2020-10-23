@@ -45,7 +45,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Get current version
-        uses: dolittle/read-version-from-file-action@v1
+        uses: dolittle/read-version-from-file-action@v2
         with:
           path: ./Source/version.json
 ```
