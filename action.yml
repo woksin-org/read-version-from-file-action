@@ -1,0 +1,14 @@
+name: 'Read Version From File'
+description: 'Reads the version information from a well defined JSON structure in a file and puts it into context.'
+inputs:
+  path:
+    description: The path to the file within the repository
+    required: true
+
+outputs:
+  current-version:
+    description: The current version read from the file.
+  
+runs:
+  using: 'node12'
+  main: 'release/index.js'
