@@ -13,10 +13,14 @@ run();
 export async function run() {
     try {
         const path = getInput('path', { required: true });
+        logger.info(`Reading version from ${path}`);
+
 
         if (fs.existsSync(path)) {
             const content = await fs.promises.readFile(path);
-            const versionInfo = JSON.parse(content.toString());
+            const contentAsString = content.toString();
+            logger.info(`Info from file : ${contentAsString}`);
+            const versionInfo = JSON.parse(contentAsString);
             core.setOutput('current-version', versionInfo.version);
         } else {
             core.setOutput('current-version', '1.0.0');
