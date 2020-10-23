@@ -1,13 +1,13 @@
-name: 'The Action Name'
-description: 'The action description'
+name: 'Read Version From File'
+description: 'Reads the version information from a well defined JSON structure in a file and puts it into context.'
 inputs:
-  someInput:
-    description: Description of the input
+  path:
+    description: The path to the file within the repository
     required: true
 
 outputs:
-  output:
-    description: Description of the output
+  current-version:
+    description: The current version read from the file.
   
 runs:
   using: 'node12'
