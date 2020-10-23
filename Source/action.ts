@@ -3,7 +3,6 @@
 
 import * as core from '@actions/core';
 import { Logger } from '@dolittle/github-actions.shared.logging';
-import { getInput } from '../node_modules/@actions/core/lib/core';
 
 import * as fs from 'fs';
 
@@ -12,7 +11,7 @@ const logger = new Logger();
 run();
 export async function run() {
     try {
-        const path = getInput('path', { required: true });
+        const path = core.getInput('path', { required: true });
         logger.info(`Reading version from ${path}`);
 
 
