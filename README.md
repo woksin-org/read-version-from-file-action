@@ -1,20 +1,31 @@
-# GitHub Action - Action Name Here
+# GitHub Action - Read Version From File
+
 This GitHub action ...
 
-![Github JavaScript Actions CI/CD](https://github.com/dolittle/repository-here/workflows/Github%20JavaScript%20Actions%20CI/CD/badge.svg)
+![Github JavaScript Actions CI/CD](https://github.com/dolittle/read-version-from-file-action/workflows/Github%20JavaScript%20Actions%20CI/CD/badge.svg)
 
-### Pre requisites
+## Pre requisites
+
+node <= 12
+yarn
+git
+
+## Usage
+
 Create a workflow `.yml` file in your `.github/workflows` directory. An [example workflow](#example-workflow) is available below.
 
 For more information, reference the GitHub Help Documentation for [Creating a workflow file](https://help.github.com/en/articles/configuring-a-workflow#creating-a-workflow-file)
 
 ### Inputs
-- `some-input`: Description here
+
+- `path`: The path to the file within the repository.
 
 ### Outputs
-- `some-output`: Description here
+
+- `current-version`: The current version read from the file.
 
 ### Example Workflow
+
 ```yaml
 on:
   push:
@@ -34,12 +45,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Name here
         uses: dolittle/action-repository-here@tag-to-use
-        
 ```
-## Contributing
-We're always open for contributions and bug fixes!
 
-### Pre requisites
-node <= 12
-yarn
-git
+## Contributing
+
+We're always open for contributions and bug fixes!
