@@ -21,11 +21,13 @@ export async function run() {
             const contentAsString = content.toString();
             logger.info(`Info from file : ${contentAsString}`);
             const versionInfo = JSON.parse(contentAsString);
+            logger.info(`Set version number : ${versionInfo.version}`)
             core.setOutput('current-version', versionInfo.version);
         } else {
             core.setOutput('current-version', '1.0.0');
         }
     } catch (error) {
+        logger.info(`Error ${error}`);
         fail(error);
     }
 }
