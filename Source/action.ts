@@ -14,9 +14,13 @@ export async function run() {
     try {
         const path = getInput('path', { required: true });
 
-        const content = await fs.promises.readFile(path);
-        const versionInfo = JSON.parse(content.toString());
-        core.setOutput('current-version', versionInfo.version);
+        if (fs.existsSync(path)) {
+            const content = await fs.promises.readFile(path);
+            const versionInfo = JSON.parse(content.toString());
+            core.setOutput('current-version', versionInfo.version);
+        } else {
+            core.setOutput('current-version', '1.0.0');
+        }
     } catch (error) {
         fail(error);
     }
