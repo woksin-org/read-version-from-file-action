@@ -44,8 +44,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Name here
-        uses: dolittle/action-repository-here@tag-to-use
+      - name: Get current version
+        uses: dolittle/read-version-from-file-action@v1
+        with:
+          path: ./Source/version.json
 ```
 
 ## Contributing
