@@ -1,6 +1,7 @@
 # GitHub Action - Read Version From File
 
-This GitHub action ...
+This GitHub action reads the version information from a given file with a well known JSON structure.
+If the file does not exist, it will return the default version of **1.0.0**.
 
 ![Github JavaScript Actions CI/CD](https://github.com/dolittle/read-version-from-file-action/workflows/Github%20JavaScript%20Actions%20CI/CD/badge.svg)
 
