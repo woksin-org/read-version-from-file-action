@@ -3,18 +3,24 @@
 
 import * as core from '@actions/core';
 import { Logger } from '@dolittle/github-actions.shared.logging';
+import { getInput } from '../node_modules/@actions/core/lib/core';
+
+import * as fs from 'fs';
 
 const logger = new Logger();
 
 run();
 export async function run() {
     try {
-        // Put your code in here
+        const path = getInput('path', { required: true });
+
+        const content = await fs.promises.readFile(path);
+        const versionInfo = JSON.parse(content.toString());
+        core.setOutput('current-version', versionInfo.version);
     } catch (error) {
         fail(error);
     }
 }
-
 
 function fail(error: Error) {
     logger.error(error.message);
