@@ -10,5 +10,5 @@ outputs:
     description: The current version read from the file.
   
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'release/index.js'

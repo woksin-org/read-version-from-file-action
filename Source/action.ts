@@ -10,11 +10,14 @@ import * as fs from 'fs';
 const logger = new Logger();
 
 run();
+
+/**
+ * Runs the action.
+ */
 export async function run() {
     try {
         const path = getInput('path', { required: true });
         logger.info(`Reading version from ${path}`);
-
 
         if (fs.existsSync(path)) {
             const content = await fs.promises.readFile(path);
@@ -26,7 +29,7 @@ export async function run() {
         } else {
             core.setOutput('current-version', '1.0.0');
         }
-    } catch (error) {
+    } catch (error: any) {
         logger.info(`Error ${error}`);
         fail(error);
     }
