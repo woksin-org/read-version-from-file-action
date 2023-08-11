@@ -32,7 +32,7 @@ jobs:
         pr-url: ${{ steps.context.outputs.pr-url }}
     - name: Create GitHub Release
       if: ${{ steps.context.outputs.should-publish == 'true' }}
-      uses: ./
+      uses: woksin-org/github-release-action@v3
       with:
         version: ${{ steps.context.outputs.new-version }}
         body: ${{ steps.context.outputs.pr-body }}
