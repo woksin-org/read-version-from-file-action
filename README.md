@@ -3,8 +3,6 @@
 This GitHub action reads the version information from a given file with a well known JSON structure.
 If the file does not exist, it will return the default version of **1.0.0**.
 
-![Github JavaScript Actions CI/CD](https://github.com/dolittle/read-version-from-file-action/workflows/Github%20JavaScript%20Actions%20CI/CD/badge.svg)
-
 ## Pre requisites
 
 node <= 12
@@ -43,9 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Get current version
-        uses: dolittle/read-version-from-file-action@v2
+        uses: woksin-org/read-version-from-file-action@v2
         with:
           path: ./Source/version.json
 ```

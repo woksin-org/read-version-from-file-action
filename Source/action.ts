@@ -1,9 +1,9 @@
-// Copyright (c) Dolittle. All rights reserved.
+// Copyright (c) woksin-org. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import * as core from '@actions/core';
-import { Logger } from '@dolittle/github-actions.shared.logging';
-import { getInput } from '../node_modules/@actions/core/lib/core';
+import { Logger } from '@woksin/github-actions.shared.logging';
+import { getInput } from '@actions/core';
 
 import * as fs from 'fs';
 
